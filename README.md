@@ -2,9 +2,12 @@
 > 🛠️ Extension Description:
 This Google Chrome extension replaces the standard emojis from your operating system with MacOs-style emojis on all websites.
 
+> Total : 1059 Emoji
+
 > 🛠️ Описание расширения:
 Это расширение для Google Chrome заменяет стандартные эмодзи вашей операционной системы на эмодзи в стиле MacOs (Apple) на всех сайтах.
 
+> Всего : 1059 Емодзи
 
 ![Превью Бота](preview.png)
 
