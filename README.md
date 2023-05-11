@@ -1,11 +1,16 @@
 # Emoji Replacer [Google Chrome]
-### Apple design on Windows
+> 🛠️ Extension Description:
+This Google Chrome extension replaces the standard emojis from your operating system with MacOs-style emojis on all websites.
+
+> 🛠️ Описание расширения:
+Это расширение для Google Chrome заменяет стандартные эмодзи вашей операционной системы на эмодзи в стиле MacOs (Apple) на всех сайтах.
+
 
 ![Превью Бота](preview.png)
 
 
 
-### English intrustion:
+### Intrustion:
 
 > 1. Download the archive.
 > 2. Unpack img.rar (place the "img" folder in the root directory with the other files).
