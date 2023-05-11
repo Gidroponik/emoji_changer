@@ -5,6 +5,10 @@
     });
   });
 
+  if (!emojis)  return;
+  console.log('%c[Emoji Replacer] load successfully!','color: white; background-color: #28a745; font-size: 16px;');
+  console.log('%cGithub: https://github.com/Gidroponik/emoji_changer','color: black; background-color: #e2bfff; font-size: 14px;');
+
   const emojiMap = await Promise.all(
     emojis.map(async (emoji) => {
       const response = await fetch(chrome.runtime.getURL(`img/${emoji.img}`));
