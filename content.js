@@ -8,20 +8,28 @@
   const emojiMap = await Promise.all(
     emojis.map(async (emoji) => {
       const response = await fetch(chrome.runtime.getURL(`img/${emoji.img}`));
+      const response2x = await fetch(chrome.runtime.getURL(`img/${emoji.img2x}`));
       const blob = await response.blob();
+      const blob2x = await response2x.blob();
       const dataUrl = await new Promise((resolve) => {
         const reader = new FileReader();
         reader.onloadend = () => resolve(reader.result);
         reader.readAsDataURL(blob);
       });
+      const dataUrl2x = await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.readAsDataURL(blob2x);
+      });
       return {
         symbol: emoji.symbol,
         imgTag: `<img class="emoji" src="${dataUrl}" alt="${emoji.symbol}">`,
+        imgTag2x: `<img class="emoji emoji-2x" src="${dataUrl2x}" alt="${emoji.symbol}">`,
       };
     })
   ).then((emojiImgTags) =>
     emojiImgTags.reduce((map, emoji) => {
-      map[emoji.symbol] = emoji.imgTag;
+      map[emoji.symbol] = { imgTag: emoji.imgTag, imgTag2x: emoji.imgTag2x };
       return map;
     }, {})
   );
@@ -32,10 +40,11 @@
       width: 16px;
       height: 16px;
       border: 0;
-      vertical-align: -3px;
       margin: 0 1px;
-      display: inline-block;
-      overflow: hidden;
+    }
+    .emoji-2x {
+      width: 32px;
+      height: 32px;
     }
   `;
   document.head.appendChild(style);
@@ -53,6 +62,8 @@
 
       if (foundEmoji) {
         const parentNode = node.parentNode;
+        const fontSize = parseFloat(getComputedStyle(parentNode).fontSize);
+        const isLarge = fontSize > 16;
         const emojiPattern = new RegExp(
           '(' +
             Object.keys(emojiMap)
@@ -68,7 +79,7 @@
         textParts.forEach((part) => {
           if (emojiMap[part]) {
             const tempElement = document.createElement('template');
-            tempElement.innerHTML = emojiMap[part];
+            tempElement.innerHTML = isLarge ? emojiMap[part].imgTag2x : emojiMap[part].imgTag;
             const emojiElement = tempElement.content.firstChild;
             parentNode.insertBefore(emojiElement, node);
           } else {
