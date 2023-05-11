@@ -1,4 +1,4 @@
-# Emoji Replacer [Google Chrome]
+# 😳👉👈 Emoji Replacer [Google Chrome]
 > 🛠️ Extension Description:
 This Google Chrome extension replaces the standard emojis from your operating system with MacOs-style emojis on all websites.
 
