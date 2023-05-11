@@ -10,7 +10,7 @@ This Google Chrome extension replaces the standard emojis from your operating sy
 
 
 
-### Intrustion:
+### 📥 Installation Instructions:
 
 > 1. Download the archive.
 > 2. Unpack img.rar (place the "img" folder in the root directory with the other files).
@@ -18,7 +18,7 @@ This Google Chrome extension replaces the standard emojis from your operating sy
 > 4. Click "Load unpacked extension" and select the folder with the extension.
 > 5. Enjoy!
 
-### Инструкция по установке
+### 📥 Инструкции по установке:
 
 > 1. Скачайте архив.
 > 2. Распакуйте img.rar (папку "img" поместите в корневой каталог с другими файлами).
