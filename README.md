@@ -1,4 +1,9 @@
 # Emoji Replacer [Google Chrome]
+### Apple design on Windows
+
+![Превью Бота](preview.png)
+
+
 
 ### English intrustion:
 
